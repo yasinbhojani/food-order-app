@@ -10,7 +10,7 @@ I made this food order app as a practice project while learning react hooks and 
 
 ---
 
-To run the project
+## To run the project
 
 open a terminal window
 
