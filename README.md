@@ -2,7 +2,7 @@
 
 a simple and functional food ordering app.
 
-hosted link: 
+hosted link: [foodorderapp-yb.netlify.app](https://foodorderapp-yb.netlify.app/)
 
 I made this food order app as a practice project while learning react hooks and context API. This app mainly uses a context and a reducer to manage the data. This project is still a work in progress and there are more functionalities to be added.
 
