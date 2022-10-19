@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 
 const cartContext = React.createContext({
   items: [],
@@ -14,6 +14,7 @@ const cartReducer = (state, action) => {
       if (item.id === action.item.id) {
         return true;
       }
+      return false;
     });
 
     if (index === -1) {
@@ -50,9 +51,10 @@ const cartReducer = (state, action) => {
       if (item.id === action.id) {
         return true;
       }
+      return false;
     });
 
-    if (index != -1) {
+    if (index !== -1) {
       dupCartItems[index].quantity = dupCartItems[index].quantity - 1;
       let total = state.total - dupCartItems[index].price;
 

@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import cartContext from "../../context/cart-context";
+import React from "react";
 
 import Card from "../UI/Card";
 import styles from "./AvailableMeals.module.css";
@@ -29,7 +28,7 @@ const DUMMY_MEALS = [
     name: "Green Bowl",
     description: "Healthy...and green...",
     price: 18.99,
-  }
+  },
 ];
 
 const AvailableMeals = () => {

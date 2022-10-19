@@ -1,19 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import cartContext from "../../../context/cart-context";
 
 import styles from "./MealItemForm.module.css";
 
 const MealItemForm = (props) => {
-  // const [quantity, setQuantity] = useState(0);
   const cartCtx = useContext(cartContext);
   const index = cartCtx.items.findIndex((item) => {
     if (item.id === props.id) {
       return true;
     }
+    return false;
   });
 
   let quantity = 0;
-  if (index != -1) {
+  if (index !== -1) {
     quantity = cartCtx.items[index].quantity;
   }
 

@@ -23,6 +23,7 @@ const Cart = (props) => {
         />
       );
     }
+    return "";
   });
 
   return (
