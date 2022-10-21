@@ -11,6 +11,11 @@ const Cart = (props) => {
     props.onCloseClick();
   };
 
+  const orderHandler = () => {
+    console.log("FOOD ORDERED!");
+    alert("order is on its way");
+  };
+
   const mappedItems = cartCtx.items.map((item) => {
     if (item.quantity > 0) {
       return (
@@ -27,16 +32,16 @@ const Cart = (props) => {
   });
 
   return (
-    <Modal>
+    <Modal onClose={props.onCloseClick}>
       <div className={styles["cart-container"]}>
-        {mappedItems}
+        <div className={styles["cart-items"]}>{mappedItems}</div>
         <div className={styles.total}>
           <span>Total Amount</span>
           <span>${cartCtx.totalAmount.toFixed(2)}</span>
         </div>
         <div className={styles.controls}>
           <button onClick={cartCloseHandler}>close</button>
-          <button>order</button>
+          <button onClick={orderHandler}>order</button>
         </div>
       </div>
     </Modal>
