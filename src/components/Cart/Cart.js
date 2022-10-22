@@ -7,6 +7,12 @@ import CartItem from "./CartItem";
 
 const Cart = (props) => {
   const cartCtx = useContext(cartContext);
+
+  const totalItems = cartCtx.items.reduce(
+    (currValue, item) => currValue + item.quantity,
+    0
+  );
+
   const cartCloseHandler = () => {
     props.onCloseClick();
   };
@@ -41,7 +47,11 @@ const Cart = (props) => {
         </div>
         <div className={styles.controls}>
           <button onClick={cartCloseHandler}>close</button>
-          <button onClick={orderHandler}>order</button>
+          {totalItems === 0 ? (
+            ""
+          ) : (
+            <button onClick={orderHandler}>order</button>
+          )}
         </div>
       </div>
     </Modal>

@@ -43,8 +43,6 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === "DEL") {
-    console.log(action.id);
-
     const dupCartItems = [...state.cartItems];
 
     const index = dupCartItems.findIndex((item) => {
